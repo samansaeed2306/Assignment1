@@ -23,11 +23,11 @@ jobs:
         npm run build
 
     -name: Deploy
-    uses: samansaeed2306/github-pages-deploy-action@v4
+    uses: samansaeed2306/Assignment1/github-pages-deploy-action@v4
     with: 
        folder: build
        branch: gh-pages
-       
+
 
 
 
