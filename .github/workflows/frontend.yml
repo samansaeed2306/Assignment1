@@ -1,0 +1,38 @@
+name: Build and Deploy
+on:
+ push: 
+ branches:
+ -main
+
+jobs:
+  build-and-deploy:
+  runs-on: ubuntu-latest
+  concurrency: ci-${{github.ref}}
+  steps:
+   -name: Checkout
+    uses: actions/checkout@v3
+
+     -name: Configure Node
+    uses: actions/setup-node@v3
+    with: 
+    node-version: '16.17.0'
+
+    -name: Install
+    run: |
+        npm ci
+        npm run build
+
+    -name: Deploy
+    uses: samansaeed2306/github-pages-deploy-action@v4
+    with: 
+       folder: build
+       branch: gh-pages
+       
+
+
+
+    
+  
+
+  defaults:
+  run: working-directory:./frontend
