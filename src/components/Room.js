@@ -122,7 +122,7 @@ import Axios from "axios";
           <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
         </div>
 
-        <MDBBtn onClick={createCustomer} className='w-100 mb-4' size='md'>Add Room</MDBBtn>
+        <MDBBtn onClick={createCustomer} className='w-100 mb-4' size='md' id='abc'>Add Room</MDBBtn>
 
         <div className="text-center">
 
